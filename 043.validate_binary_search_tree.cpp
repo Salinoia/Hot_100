@@ -9,8 +9,11 @@ struct TreeNode {
 
 class Solution {
 public:
-    TreeNode* pre = nullptr;
-    bool isValidBST(TreeNode* node) {
+    bool isValidBST(TreeNode* root) {
+        TreeNode* pre = nullptr;
+        return validate(root, pre);
+    }
+    bool validate(TreeNode* node, TreeNode* pre){        
         if(!node) return true;
         bool left = isValidBST(node->left);
         if(pre && pre->val >= node->val) return false;
