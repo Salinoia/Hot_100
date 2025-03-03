@@ -104,6 +104,7 @@
     "list": "cpp",
     "iostream": "cpp",
     "istream": "cpp",
-    "queue": "cpp"
+    "queue": "cpp",
+    "climits": "cpp"
   }
 }
