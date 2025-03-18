@@ -28,6 +28,21 @@ private:
         if(closeCount < openCount){
             combination.push_back(')');
             backtracking(openCount, closeCount + 1, n);
+            combination.pop_back();
         }
     }
 };
+
+#include <iostream>
+int main(){
+    std::cout << "输入需要匹配的括号对数" << std::endl;
+    int n;
+    std::cin >> n;
+
+    Solution s;
+    vector<string> results = s.generateParenthesis(n);
+
+    for(auto& path : results){
+        std::cout << path << std::endl;
+    }
+}
