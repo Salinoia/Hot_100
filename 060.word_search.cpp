@@ -28,3 +28,26 @@ private:
         return res;
     }
 };
+
+#include <iostream>
+int main(){
+    int rows, cols;
+    cout << "请输入矩阵行列（大于零的正整数）" << std::endl;
+    cin >> rows >> cols;
+    Solution s;
+    vector<vector<char>> board(rows, vector<char>(cols, '\0'));
+    cout << "请按照行主序输入字母表， 以空格或者回车隔开" << std::endl;
+    for(vector<char>& row : board){
+        for(char& ele : row){
+            cin >> ele;
+        }
+    }
+    cout << "请输入测试单词" << std::endl;
+    string word;
+    cin >> word;
+    if(s.exist(board, word)){
+        cout << "存在测试单词 " << word << std::endl; 
+    }
+    else cout << "不存在测试单词"  << word << std::endl;
+    return 0;
+}
